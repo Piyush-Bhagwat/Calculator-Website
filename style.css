@@ -1,0 +1,105 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    outline: none;
+}
+
+.container{
+    background-color: #abb6d4;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.calculatorButton{
+    padding: 30px 1px 1px;
+    background-color: #22252D;
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px rgba(27, 29, 36, 40);
+}
+
+.buttons{
+    background-color: #2A2D37;
+    padding: 20px;
+    border-radius: 40px 40px 10px 10px;
+    box-shadow: 5px 5px 12px rgba(27, 29, 36, 40);
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+}
+
+.clcBtn{
+    padding: 5px;
+    margin: 7px;
+    width: 50px;
+    height: 50px;
+
+    color: #D8DBE0;
+    font-weight: 600;
+    font-size: 1.5em;
+
+    background-color: #282B33;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 5px 5px 12px rgba(27, 29, 36, 80);
+    transition: ease-in 0.23s;
+
+}
+
+.topBtn{
+    color: #63CBBD;
+}
+
+.operator{
+    color: #D26A6A;
+}
+
+.clcBtn:hover{
+    box-shadow: 0px 0px 25px #D8DBE0;
+    background-color: #D8DBE0;
+    color: #282B33; 
+}
+
+.topBtn:hover{
+    box-shadow: 0px 0px 25px #63CBBD;
+    background-color: #63CBBD;
+}
+
+.operator:hover{
+    box-shadow: 0px 0px 25px #D26A6A;
+    background-color: #D26A6A;
+}
+.ansArea{
+    
+    width: 90%;
+    height: 200px;
+    text-align: right;
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    color: #D8DBE0;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    align-items: flex-end;
+    padding: 20px 0px;
+}
+
+.ans{
+    font-size: 3em;
+    font-weight: 600;
+    transition: ease 0.3s;
+}
+
+.enLarge{
+    transform: scale(2);
+}
+
+.eqn{
+    /* letter-spacing: 12px; */
+}
