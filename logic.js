@@ -19,6 +19,16 @@ function onClick(){
     clickAudio.play();
 }
 
+function del(){
+    equation = equation.slice(0, -1);
+    eqnEL.innerHTML = equation;
+    ans = eval(equation);
+    
+    if(ans == undefined){
+        ans = 0;
+    }
+    ansEL.innerHTML = ans;
+}
 
 function display(num){
     if(toReset){
