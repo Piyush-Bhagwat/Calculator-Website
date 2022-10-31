@@ -11,6 +11,36 @@ var equation="";
 ansEL.style.transform = "scale(1)";
 ansEL.style.padding = "0px";
 
+document.addEventListener("keydown", function(event){ //handles Keyboard Input
+    console.log(event.key);
+    num = event.key;
+    if(isNumeric(num) || num == '.' || num =='*' || num=='/' || num=='-' || num=='+' || num=='%'){
+        clickAudio.play();
+        display(num);
+    }
+
+    switch (num) {
+        case "Enter":
+            clickAudio.play();
+            calculat();
+        break;
+        
+        case 'c':
+            clickAudio.play();
+            location.reload()
+            break;
+        case "Backspace":
+            clickAudio.play();
+            del();
+        default:
+            break;
+    }
+});
+
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
 function isFloat(value) {
     if (
       typeof value === 'number' &&
@@ -76,3 +106,22 @@ function reset(){
     ansEL.style.transform = "scale(1)";
     ansEL.style.padding = "0px";
 }
+
+// num = event.key;
+//     if(isNumeric(num) || num == '.' || num =='*' || num=='/' || num=='-' || num=='+'){
+//         clickAudio.play();
+//         display(num);
+//     }
+
+//     switch (num) {
+//         case "Enter":
+//             calculat();
+//         break;
+        
+//         case 'c':
+//             location.reload()
+//             break;
+//         case 
+//         default:
+//             break;
+//     }
