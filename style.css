@@ -93,6 +93,8 @@
 .ans{
     font-size: 3em;
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: ease 0.3s;
 }
 

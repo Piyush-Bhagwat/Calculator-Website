@@ -11,6 +11,18 @@ var equation="";
 ansEL.style.transform = "scale(1)";
 ansEL.style.padding = "0px";
 
+function isFloat(value) {
+    if (
+      typeof value === 'number' &&
+      !Number.isNaN(value) &&
+      !Number.isInteger(value)
+    ) {
+      return true;
+    }
+  
+    return false;
+  }
+
 for(var i=0; i<document.getElementsByClassName("clcBtn").length; i++){
     document.getElementsByClassName("clcBtn")[i].addEventListener("click", onClick);
 }
@@ -23,6 +35,10 @@ function del(){
     equation = equation.slice(0, -1);
     eqnEL.innerHTML = equation;
     ans = eval(equation);
+
+    if(isFloat(ans)){
+        ans = eval(equation).toFixed(3); 
+    }
     
     if(ans == undefined){
         ans = 0;
@@ -38,6 +54,9 @@ function display(num){
     eqnEL.innerHTML = equation;
 
     ans = eval(equation);
+    if(isFloat(ans)){
+        ans = eval(equation).toFixed(3); 
+    }
     ansEL.innerHTML = ans;
 }
 
@@ -47,7 +66,7 @@ function calculat(){
     toReset = true;
 
     ansEL.style.transform = "scale(2)";
-    ansEL.style.padding = "20px";
+    ansEL.style.padding = "20px 30px";
 }
 
 function reset(){
