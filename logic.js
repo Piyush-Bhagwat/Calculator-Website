@@ -1,6 +1,6 @@
 var eqnEL = document.querySelector(".eqn");
 var ansEL = document.querySelector(".ans");
-var ansArea = document.querySelector(".ansArea")
+var ansArea = document.querySelector(".ansArea");
 
 var clickAudio = new Audio("sounds/click.wav");
 
@@ -54,15 +54,18 @@ function isFloat(value) {
     return false;
   }
 
-for(var i=0; i<document.getElementsByClassName("clcBtn").length; i++){
-    document.getElementsByClassName("clcBtn")[i].addEventListener("click", onClick);
-}
+// for(var i=0; i<document.getElementsByClassName("clcBtn").length; i++){
+//     document.getElementsByClassName("clcBtn")[i].addEventListener("click", onClick);
+// }
 
-function onClick(ev){
+$(".clcBtn").click(function (ev){
     clickAudio.play();
-    ev.srcElement.classList.add("clickedAnim");
-    setTimeout(function (){ev.srcElement.classList.remove("clickedAnim");}, 300);
-}
+    console.log(ev);
+    ev.target.classList.add("clickedAnim");
+    setTimeout(function (){ev.target.classList.remove("clickedAnim");}, 300);
+});
+
+
 
 function onPress(key){
     btn = document.getElementById(key);
