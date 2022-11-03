@@ -58,21 +58,12 @@
     color: #D26A6A;
 }
 
-.clcBtn:hover{
+.clickedAnim{
     box-shadow: 0px 0px 25px #D8DBE0;
     background-color: #D8DBE0;
     color: #282B33; 
 }
 
-.topBtn:hover{
-    box-shadow: 0px 0px 25px #63CBBD;
-    background-color: #63CBBD;
-}
-
-.operator:hover{
-    box-shadow: 0px 0px 25px #D26A6A;
-    background-color: #D26A6A;
-}
 .ansArea{
     
     width: 90%;

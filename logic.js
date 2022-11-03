@@ -15,22 +15,23 @@ document.addEventListener("keydown", function(event){ //handles Keyboard Input
     console.log(event.key);
     num = event.key;
     if(isNumeric(num) || num == '.' || num =='*' || num=='/' || num=='-' || num=='+' || num=='%'){
-        clickAudio.play();
+        onPress(num);
+        
         display(num);
     }
 
     switch (num) {
         case "Enter":
-            clickAudio.play();
+            onPress(num);
             calculat();
         break;
         
         case 'c':
-            clickAudio.play();
+            onPress(num);
             location.reload()
             break;
         case "Backspace":
-            clickAudio.play();
+            onPress(num);
             del();
         default:
             break;
@@ -57,8 +58,17 @@ for(var i=0; i<document.getElementsByClassName("clcBtn").length; i++){
     document.getElementsByClassName("clcBtn")[i].addEventListener("click", onClick);
 }
 
-function onClick(){
+function onClick(ev){
     clickAudio.play();
+    ev.srcElement.classList.add("clickedAnim");
+    setTimeout(function (){ev.srcElement.classList.remove("clickedAnim");}, 300);
+}
+
+function onPress(key){
+    btn = document.getElementById(key);
+    clickAudio.play();
+    btn.classList.add("clickedAnim");
+    setTimeout(function (){btn.classList.remove("clickedAnim");}, 300);
 }
 
 function del(){
