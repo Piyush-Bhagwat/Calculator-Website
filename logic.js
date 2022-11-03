@@ -11,7 +11,7 @@ var equation="";
 ansEL.style.transform = "scale(1)";
 ansEL.style.padding = "0px";
 
-document.addEventListener("keydown", function(event){ //handles Keyboard Input
+$(document).keydown(function(event){ //handles Keyboard Input
     console.log(event.key);
     num = event.key;
     if(isNumeric(num) || num == '.' || num =='*' || num=='/' || num=='-' || num=='+' || num=='%'){
